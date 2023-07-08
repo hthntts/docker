@@ -1,7 +1,13 @@
 ---
 - hosts: all
   become: yes
+
   tasks:
     - name: EXPORT ACCOUNT
       shell: |
-        /home/icewarp/tool.sh export account admin@* u_password
+        /home/icewarp/tool.sh export account {{ email_account }} u_password
+      register: export_account
+
+    - name: SHOW EXPORT ACCOUNTS
+      debug:
+        var: export_account.stdout_lines
