@@ -4,4 +4,4 @@
   tasks:
     - name: EXPORT ACCOUNT
       shell: |
-        /home/icewarp/tool.sh export account {{ email_account }} u_password
+        /home/icewarp/tool.sh export account admin@* u_password
